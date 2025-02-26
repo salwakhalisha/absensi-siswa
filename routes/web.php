@@ -14,3 +14,12 @@ Route::get('/index', function ()
     ]);
 
 })->name('index');
+
+Route::get('/login', function ()
+{
+    return view('login',
+    [
+        "menu"=>"login"
+    ]);
+
+})->name('login');

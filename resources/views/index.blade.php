@@ -132,8 +132,8 @@
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
+              <li class="nav-item" {{$menu === 'login' ? 'active' : ''}}>
+                <a class="nav-link" href="{{route('login')}}">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
                     <span class="d-lg-none d-md-block">Account</span>
