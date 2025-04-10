@@ -1,6 +1,6 @@
 
 <!-- partial:partials/_sidebar.html -->
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
           <a class="sidebar-brand brand-logo" href="{{asset('dist/assets/images/logo.svg')}}"><img src="{{asset('dist/assets/images/logo.svg')}}" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="{{asset('dist/assets/images/logo-mini.svg')}}"><img src="{{asset('dist/assets/images/logo-mini.svg')}}" alt="logo" /></a>
@@ -93,8 +93,8 @@
           <i class="menu-arrow"></i>
         </a>
           </li>
-          <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+          <li class="nav-item {{$menu === 'jurusan' ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('jurusan.index')}}">
           <span class="menu-icon">
           <i class="mdi mdi-laptop"></i>
           </span>
