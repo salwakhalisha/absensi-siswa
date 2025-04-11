@@ -10,7 +10,7 @@ class JurusanController extends Controller
     public function index()
     {
         $jurusan  = jurusan::all();
-        return view('jurusan.index', 
+        return view('admin.jurusan.index', 
         [
             "menu" => "jurusan"
             , "jurusan" => $jurusan
@@ -19,7 +19,7 @@ class JurusanController extends Controller
 
     public function create()
     {
-        return view('jurusan.create', 
+        return view('admin.jurusan.create', 
         [
             "menu"=> "jurusan"
         ]);
@@ -41,7 +41,7 @@ class JurusanController extends Controller
     public function edit($id)
     {
         $jurusan = jurusan::find($id);
-        return view('jurusan.edit', 
+        return view('admin.jurusan.edit', 
         [
             "menu" => "jurusan"
             , "jurusan" => $jurusan

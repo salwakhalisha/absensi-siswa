@@ -5,9 +5,10 @@
                 <div class="card">
                   <div class="card-body">
                     <h4 class="card-title">Data Jurusan</h4>
-                    <form action="{{route('jurusan.update')}}" method="post">
+                    <form action="{{route('jurusan.update', $jurusan->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <input type="hidden" name="id" value="{{$jurusan->id}}">
                     <div class="forms-sample">
                       <div class="form-group">
                         <label for="nama">Nama Jurusan</label>

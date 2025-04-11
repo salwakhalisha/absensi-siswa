@@ -67,6 +67,15 @@
         </a>
           </li>
           <li class="nav-item menu-items">
+        <a class="nav-link" href="{{route('user.index')}}">
+          <span class="menu-icon">
+          <i class="fa fa-address-book"></i>
+          </span>
+          <span class="menu-title">User</span>
+          <i class="menu-arrow"></i>
+        </a>
+          </li>
+          <li class="nav-item menu-items">
         <a class="nav-link" href="#">
           <span class="menu-icon">
             <i class="mdi mdi-playlist-play"></i>
@@ -75,8 +84,8 @@
           <i class="menu-arrow"></i>
         </a>
           </li>
-          <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+          <li class="nav-item {{$menu === 'guru' ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('guru.index')}}">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
           </span>
@@ -84,8 +93,8 @@
           <i class="menu-arrow"></i>
         </a>
           </li>
-          <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+          <li class="nav-item menu-items {{$menu === 'lokal' ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('lokal.index')}}">
           <span class="menu-icon">
             <i class="mdi mdi-chart-bar"></i>
           </span>
