@@ -1,5 +1,5 @@
 @extends('template.layouts')
-@section('title', 'Edit Data Guru')
+@section('title', 'Tambah Data Guru')
 @section('konten')
 
                 <div class="card">

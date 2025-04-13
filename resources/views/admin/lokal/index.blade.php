@@ -5,9 +5,9 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Data Jurusan</h4>
+            <h4 class="card-title">Data Kelas</h4>
 
-            <a href="{{ route('jurusan.create') }}" class="btn btn-danger btn-icon-text">
+            <a href="{{ route('lokal.create') }}" class="btn btn-danger btn-icon-text">
                 <i class="mdi mdi-upload btn-icon-prepend"></i> Upload
             </a>
 
@@ -28,9 +28,9 @@
                                 <td>{{ $lk['nama'] }}</td>
                                 <td>{{ $lk->guru ? $lk->guru->nama : 'Guru tidak ditemukan' }}</td>
                                 <td>
-                                    <a href="{{ route('guru.edit', $lk['id']) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <a href="{{ route('guru.show', $lk['id']) }}" class="btn btn-primary btn-sm">Detail</a>
-                                    <form action="{{ route('guru.delete', $lk['id']) }}" method="POST" class="d-inline">
+                                    <a href="{{ route('lokal.edit', $lk['id']) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('lokal.show', $lk['id']) }}" class="btn btn-primary btn-sm">Detail</a>
+                                    <form action="{{ route('lokal.delete', $lk['id']) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
