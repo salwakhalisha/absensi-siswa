@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokalController;
+use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\JurusanController;
 
 
@@ -47,3 +48,6 @@ Route::get('/lokal/edit/{id}', [LokalController::class, 'edit'])->name('lokal.ed
 Route::put('/lokal/update', [LokalController::class, 'update'])->name('lokal.update');
 Route::get('/lokal/show/{id}', [LokalController::class, 'show'])->name('lokal.show');
 Route::delete('/lokal/delete/{id}', [LokalController::class, 'destroy'])->name('lokal.delete');
+
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');

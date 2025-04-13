@@ -75,8 +75,8 @@
           <i class="menu-arrow"></i>
         </a>
           </li>
-          <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+          <li class="nav-item menu-items" {{$menu === 'guru' ? 'active' : ''}}">
+        <a class="nav-link" href="{{route('siswa.index')}}">
           <span class="menu-icon">
             <i class="mdi mdi-playlist-play"></i>
           </span>
