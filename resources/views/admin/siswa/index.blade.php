@@ -5,7 +5,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <h4 class="card-title">Data Guru</h4>
+                    <h4 class="card-title">Data Siswa</h4>
 
                         <a href="{{route('siswa.create')}}" class="btn btn-danger btn-icon-text">
                         <i class="mdi mdi-upload btn-icon-prepend"></i> Upload</a>
@@ -17,6 +17,7 @@
                             <th> No</th>
                             <th> Nama </th>
                             <th> NISN </th>
+                            <th> Kelas </th>
                             <th> Aksi </th>
                           </tr>
                         </thead>
@@ -26,6 +27,7 @@
                           <td>{{$loop->iteration}}</td>
                           <td>{{$dts['nisn']}}</td>
                           <td>{{$dts['nama']}}</td>
+                          <td>{{ $dts->lokal ? $dts->lokal->nama : 'Data tidak ditemukan' }}</td>
                           <td>
                           
                           </td>
