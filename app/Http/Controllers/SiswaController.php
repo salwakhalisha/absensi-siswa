@@ -92,12 +92,12 @@ class SiswaController extends Controller
     public function edit($id)
     {
         $siswa = Siswa::with('lokal')->find($id);
-        $kelas = lokal::all();
+        $lokal = lokal::all();
         return view('admin.siswa.edit', [
             'menu' => 'siswa',
             'title' => 'Edit Data Siswa',
             'siswa' => $siswa,
-            'kelas' => $kelas
+            'lokal' => $lokal
         ]);
     }
 
@@ -117,6 +117,9 @@ class SiswaController extends Controller
 
 
         $siswa = siswa::find($id);
+        if (!$siswa) {
+            return redirect(route('siswa.index'))->with('error', 'Siswa not found.');
+        }
         $siswa->nisn = $validasi['nisn'] ?? $siswa->nisn;
         $siswa->nama = $validasi['nama'] ?? $siswa->nama;
         $siswa->alamat = $validasi['alamat'] ?? $siswa->alamat;
