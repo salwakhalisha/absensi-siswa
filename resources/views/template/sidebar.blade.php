@@ -71,7 +71,7 @@
         <span class="menu-title">Dashboard</span>
       </a>
     </li>
-    <li class="nav-item menu-items">
+    <li class="nav-item menu-items {{$menu === 'user' ? 'active' : ''}}">
       <a class="nav-link" href="{{ route('user.index') }}">
         <span class="menu-icon">
           <i class="fa fa-address-book"></i>

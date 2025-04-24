@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function loginView()
     {
-        return view('login');
+        return view('admin.utama.login');
     }
 
     public function authenticate(Request $request):RedirectResponse

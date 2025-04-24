@@ -3,6 +3,7 @@
 use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokalController;
 use App\Http\Controllers\SiswaController;
@@ -10,11 +11,11 @@ use App\Http\Controllers\JurusanController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.utama.welcome');
 });
 
 Route::get('/index', function () {
-    return view('index', [
+    return view('admin.utama.index', [
         "menu" => "index"
     ]);
 })->name('index');
@@ -30,7 +31,7 @@ Route::get('/jurusan/edit/{id}', [JurusanController::class, 'edit'])->name('juru
 Route::put('/jurusan/update', [JurusanController::class, 'update'])->name('jurusan.update');
 Route::delete('/jurusan/delete/{id}', [JurusanController::class, 'destroy'])->name('jurusan.delete');  
 
-Route::get('/user', [LoginController::class, 'user'])->name('user.index');
+Route::get('/user', [UserController::class, 'user'])->name('user.index');
 
 
 Route::get('/guru', [GuruController::class, 'index'])->name('guru.index');

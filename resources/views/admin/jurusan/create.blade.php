@@ -10,7 +10,7 @@
                     <div class="forms-sample">
                       <div class="form-group">
                         <label for="nama">Nama Jurusan</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Guru">
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Jurusan">
                       </div>
                       <button type="submit" class="btn btn-primary me-2">Submit</button>
                       <a href="{{route('jurusan.index')}}">
