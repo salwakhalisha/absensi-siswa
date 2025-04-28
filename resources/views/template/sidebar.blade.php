@@ -63,8 +63,8 @@
     <li class="nav-item nav-category">
       <span class="nav-link">Navigation</span>
     </li>
-    <li class="nav-item menu-items">
-      <a class="nav-link" href="{{ route('index') }}">
+    <li class="nav-item menu-items {{$menu === 'home' ? 'active' : ''}}">
+      <a class="nav-link" href="{{ route('dashboard.admin') }}">
         <span class="menu-icon">
           <i class="mdi mdi-speedometer"></i>
         </span>
@@ -74,16 +74,16 @@
     <li class="nav-item menu-items {{$menu === 'user' ? 'active' : ''}}">
       <a class="nav-link" href="{{ route('user.index') }}">
         <span class="menu-icon">
-          <i class="fa fa-address-book"></i>
+        <i class="fa fa-id-card"></i>
         </span>
-        <span class="menu-title">User</span>
+        <span class="menu-title">Data User</span>
         <i class="menu-arrow"></i>
       </a>
     </li>
-    <li class="nav-item {{ $menu === 'siswa' ? 'active' : '' }}">
+    <li class="nav-item menu-items {{ $menu === 'siswa' ? 'active' : ''}}">
       <a class="nav-link" href="{{ route('siswa.index') }}">
         <span class="menu-icon">
-          <i class="fa fa-id-card"></i>
+        <i class="fa fa-address-book"></i>
         </span>
         <span class="menu-title">Data Siswa</span>
         <i class="menu-arrow"></i>
@@ -92,7 +92,7 @@
     <li class="nav-item {{ $menu === 'guru' ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('guru.index') }}">
         <span class="menu-icon">
-          <i class="mdi mdi-table-large"></i>
+        <i class="mdi mdi-laptop"></i>
         </span>
         <span class="menu-title">Data Guru</span>
         <i class="menu-arrow"></i>
@@ -110,7 +110,8 @@
     <li class="nav-item {{ $menu === 'jurusan' ? 'active' : '' }}">
       <a class="nav-link" href="{{ route('jurusan.index') }}">
         <span class="menu-icon">
-          <i class="mdi mdi-laptop"></i>
+        <i class="mdi mdi-table-large"></i>
+          
         </span>
         <span class="menu-title">Data Jurusan</span>
         <i class="menu-arrow"></i>

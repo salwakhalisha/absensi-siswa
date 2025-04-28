@@ -11,7 +11,7 @@ class LoginController extends Controller
 {
     public function loginView()
     {
-        return view('admin.utama.login');
+        return view('utama.login');
     }
 
     public function authenticate(Request $request):RedirectResponse
@@ -25,7 +25,18 @@ class LoginController extends Controller
             
             $request->session()->regenerate();
 
-            return redirect()->route('index');
+            // Check user level and redirect accordingly
+            $user = Auth::user();
+            if ($user->level === 'admin') {
+                return redirect()->route('dashboard.admin');
+            } elseif ($user->level === 'guru') {
+                return redirect()->route('gurumurid.index');
+            } elseif ($user->level === 'siswa') {
+                return redirect()->route('dashboard.siswa');
+            } else {
+                Auth::logout();
+                return back()->with('loginError', 'level tidak dikenali.');
+            }
         }
 
         else {

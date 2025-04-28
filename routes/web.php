@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Auth\Events\Login;
+use App\Http\Controllers\AbsensController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\UserController;
@@ -8,21 +8,35 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LokalController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\JurusanController;
-
+use App\Http\Controllers\DashboardController;
 
 Route::get('/', function () {
-    return view('admin.utama.welcome');
+    return view('utama.welcome');
 });
 
-Route::get('/index', function () {
-    return view('admin.utama.index', [
+Route::view('/', 'utama.login');
+
+Route::get('/gurumurid', function () {
+    return view('gurumurid.index', [
         "menu" => "index"
     ]);
-})->name('index');
+})->name('gurumurid.index');
+
+Route::get('/dashboardadmin', [DashboardController::class, 'dashboardadmin'])->name('dashboard.admin');
+Route::get('/index', [DashboardController::class, 'dashboardadmin'])->name('index');
+
+
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
 Route::get('/login', [LoginController::class, 'loginView'])->name('login');
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+// Route::resource('guru', gurucontroller::class);
+// Route::resource('lokal',lokalcontroller ::class);
+// Route::resource('jurusan', jurusancontroller::class);
+// Route::resource('user', UserController::class); 
+// Route::resource('siswa', siswacontroller::class);
+// Route::resource('absen', AbsensController::class);
 
 Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
 Route::get('/jurusan/create', [JurusanController::class, 'create'])->name('jurusan.create');

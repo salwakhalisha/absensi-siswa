@@ -12,16 +12,29 @@
     <link rel="shortcut icon" href="dist/assets/images/favicon.png" />
   </head>
   <body>
-    @if(Auth::check())
-        <script>window.location = "/index";</script>
-    @endif
-    @if(session()->has('LoginError'))
-                  <div class="form-group">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                    <h5><i class="icon fas fa-ban"></i> Alert!</h5>
-                    {{ session()->get('LoginError') }}
-                  </div>
-                  @endif
+  @if(Auth::user())
+  @if(Auth::user()->level == 'admin')
+  <script>
+    window.location = "{{ route('dashboard.admin') }}";
+  </script>
+  @elseif(Auth::user()->level == 'guru')
+  <script>
+    window.location = "{{ route('gurumurid.index') }}";
+  </script>
+  @elseif(Auth::user()->level == 'siswa')
+  <script>
+    window.location = "{{ route('dashboard.siswa') }}";
+  </script>   
+  @endif
+  
+  @endif
+
+  @if(Session()->has('loginError'))
+  <div class="alert alert-danger" level="alert">
+    {{ Session()->get('loginError') }}
+  </div>
+  @endif
+  
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
         <div class="row w-100">

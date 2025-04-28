@@ -8,7 +8,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">kosong</h3>
+                          <h3 class="mb-0">{{$jumlahsiswa}}</h3>
                           <!-- <p class="text-success ms-2 mb-0 font-weight-medium">orang</p> -->
                         </div>
                       </div>
@@ -23,7 +23,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">kosong</h3>
+                          <h3 class="mb-0">{{$jumlahguru}}</h3>
                         </div>
                       </div>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">Kosong</h3>
+                          <h3 class="mb-0">{{$jumlahkelas}}</h3>
                         </div>
                       </div>   
                     </div>
@@ -51,7 +51,7 @@
                     <div class="row">
                       <div class="col-9">
                         <div class="d-flex align-items-center align-self-start">
-                          <h3 class="mb-0">kosong</h3>
+                          <h3 class="mb-0">{{$jumlahjurusan}}</h3>
                         </div>
                       </div>
                     </div>

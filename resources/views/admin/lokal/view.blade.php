@@ -12,7 +12,7 @@
         <input type="text" id="nama" class="form-control" value="{{ $lokal->nama }}" readonly>
       </div>
       <div class="form-group">
-        <label for="nama">Nama Guru</label>
+        <label for="nama">Wali Kelas</label>
         <input type="text" id="nama" class="form-control" value="{{ $lokal->guru ? $lokal->guru->nama : 'Tidak ada data' }}" readonly>
       </div>
       <div class="form-group">
