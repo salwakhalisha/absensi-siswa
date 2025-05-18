@@ -24,4 +24,16 @@ class Lokal extends Model
     {
         return $this->belongsTo(Jurusan::class, 'jurusan_id');
     }
+    public function siswa()
+    {
+    return $this->hasMany(Siswa::class);
+    }
+    public function absen()
+    {
+        return $this->hasMany(Absen::class);
+    }
+    public function lokals()
+    {
+        return $this->belongsTo(Lokal::class);
+    }
 }

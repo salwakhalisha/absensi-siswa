@@ -19,7 +19,7 @@
                     <input type="text" class="form-control" id="nama" name="nama" value="{{$siswa->nama}}">
                 </div>
                 <div class="form-group">
-                    <label for="lokal_id" class="form-label">Jurusan</label>
+                    <label for="lokal_id" class="form-label">Kelas</label>
                     <select name="lokal_id" id="lokal_id" class="form-control">
                         <option disabled selected value="{{$siswa->lokal->nama}}">Pilih Kelas</option>
                         @foreach ($lokal as $lk)

@@ -33,11 +33,11 @@
 
                           <a href="{{route('guru.show',$g['id'])}}" class="btn btn-primary btn-sm">Detail</a>
                           
-                            <form action="{{route('guru.delete',$g['id'])}}" method="POST" class="d-inline">
+                            <!-- <form action="{{route('guru.delete',$g['id'])}}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                            </form>
+                            </form> -->
                           </td>
                           </tr>
                           @endforeach

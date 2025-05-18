@@ -1,0 +1,126 @@
+
+    body {
+        background-color: #1b0056;
+        font-family: 'Poppins', sans-serif;
+        color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .absen-container {
+        background-color: #ffffff;
+        color: #1b1b1b;
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header h4 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #000;
+    }
+
+    .card-text {
+        font-size: 16px;
+        color: #444;
+        margin-bottom: 25px;
+    }
+
+    .form-inline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #333;
+        margin-right: 10px;
+    }
+
+    select.form-control {
+        padding: 8px 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        min-width: 220px;
+    }
+
+    .form-control:focus {
+        outline: none;
+        border-color: #2efcd7;
+        box-shadow: 0 0 6px #2efcd7;
+    }
+
+    .absen-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+
+    .absen-table thead {
+        background-color: #2efcd7;
+        color: #000;
+        text-align: center;
+    }
+
+    .absen-table th, .absen-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .absen-table td {
+        font-size: 15px;
+        color: black;
+    }
+
+    .absen-table label {
+        margin-right: 10px;
+    }
+
+    .btn {
+        border-radius: 20px;
+        padding: 10px 18px;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #2efcd7;
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        background-color: #1cd8b8;
+    }
+
+    .btn-success {
+        background-color: #2efcd7;
+        color: #000;
+    }
+
+    .btn-success:hover {
+        background-color: #1cd8b8;
+    }
+
+    .btn-secondary {
+        background-color: #ccc;
+        color: #333;
+    }
+
+    .btn-secondary:hover {
+        background-color: #aaa;
+    }
+
+    .text-end {
+        text-align: right;
+        margin-top: 20px;
+    }

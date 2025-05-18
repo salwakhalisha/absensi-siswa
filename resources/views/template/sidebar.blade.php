@@ -2,7 +2,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
   <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
     <div class="sidebar-brand brand-logo">
-      SENSIAN
+      Absensiku
     </div>
     <a class="sidebar-brand brand-logo-mini" href="{{ asset('dist/assets/images/logo-mini.svg') }}">
       <img src="{{ asset('dist/assets/images/logo-mini.svg') }}" alt="logo" />

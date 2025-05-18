@@ -23,17 +23,14 @@
   </script>
   @elseif(Auth::user()->level == 'siswa')
   <script>
-    window.location = "{{ route('dashboard.siswa') }}";
+    window.location = "{{ route('siswaa.index') }}";
   </script>   
   @endif
   
   @endif
 
-  @if(Session()->has('loginError'))
-  <div class="alert alert-danger" level="alert">
-    {{ Session()->get('loginError') }}
-  </div>
-  @endif
+  
+
   
     <div class="container-scroller">
       <div class="container-fluid page-body-wrapper full-page-wrapper">
@@ -42,6 +39,13 @@
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
                 <h3 class="card-title text-start mb-3">Login</h3>
+
+                @if(Session()->has('loginError'))
+                <div class="alert alert-danger" level="alert">
+                  {{ Session()->get('loginError') }}
+                </div>
+                @endif
+
                 <form action="{{route('auth')}}" method="POST">
                   @csrf
                   <div class="form-group">

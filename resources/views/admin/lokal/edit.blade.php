@@ -5,7 +5,7 @@
 <div class="card">
     <div class="card-body">
         <h4 class="card-title">Data Kelas</h4>
-        <form action="{{ route('lokal.update') }}" method="post">
+        <form action="{{ route('lokal.update', $lokal->id) }}" method="post">
             @csrf
             <div class="forms-sample">
                 <div class="form-group">

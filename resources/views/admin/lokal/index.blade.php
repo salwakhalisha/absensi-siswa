@@ -30,11 +30,11 @@
                                 <td>
                                     <a href="{{ route('lokal.edit', $lk['id']) }}" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="{{ route('lokal.show', $lk['id']) }}" class="btn btn-primary btn-sm">Detail</a>
-                                    <form action="{{ route('lokal.delete', $lk['id']) }}" method="POST" class="d-inline">
+                                    <!-- <form action="{{ route('lokal.delete', $lk['id']) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                                    </form>
+                                    </form> -->
                                 </td>
                             </tr>
                         @endforeach

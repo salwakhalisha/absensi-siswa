@@ -32,7 +32,7 @@ class LoginController extends Controller
             } elseif ($user->level === 'guru') {
                 return redirect()->route('gurumurid.index');
             } elseif ($user->level === 'siswa') {
-                return redirect()->route('dashboard.siswa');
+                return redirect()->route('siswaa.index');
             } else {
                 Auth::logout();
                 return back()->with('loginError', 'level tidak dikenali.');
@@ -46,8 +46,9 @@ class LoginController extends Controller
 
     public function LoginError()
     {
-        return back()->with('Username atau password salah.');
+        return back()->with('loginError', 'Username atau password salah.');
     }
+
 
     public function logout(Request $request):RedirectResponse
     {
