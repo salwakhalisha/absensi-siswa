@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://cdn.materialdesignicons.com/6.5.95/css/materialdesignicons.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('dist/assets/css/welcome.css') }}">
+  <link rel="stylesheet" href="{{ asset('dist/assets/css/welcomesiswa.css') }}">
   @yield('css')
 </head>
-<body class="bg-[#1A0956] text-white min-h">
+<body class="bg-[#1A0956] text-white min-h-screen font-sans">
 
   <!-- Navbar -->
   <nav class="flex justify-between items-center px-8 py-4">

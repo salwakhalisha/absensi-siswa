@@ -1,0 +1,98 @@
+/* siswa.css */
+
+/* Buat isi kontainer terlihat jelas di atas background gelap */
+.container {
+    background-color: #ffffff !important;
+    color: #1e1e1e !important;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+/* Header: Judul dan tombol kembali */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Tombol dalam form */
+.btn-primary {
+    background-color: #2ecc71;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #27ae60;
+}
+
+/* Input tanggal */
+.form-control[type="date"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Tabel */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.table thead {
+    background-color: #1A0956;
+    color: #ffffff;
+}
+
+.table th,
+.table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.text-center {
+    text-align: center;
+    color: #888;
+    padding: 20px;
+}

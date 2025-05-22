@@ -29,4 +29,11 @@ class Siswa extends Model
         return $this->hasMany(Absen::class);
     }
 
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\AbsensController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PengajuanController;
 
 Route::get('/', function () {
     return view('utama.welcome');
@@ -30,6 +31,9 @@ Route::get('/siswaa', function () {
 Route::get('/dashboardadmin', [DashboardController::class, 'dashboardadmin'])->name('dashboard.admin');
 Route::get('/index', [DashboardController::class, 'dashboardadmin'])->name('index');
 
+Route::get('ditolak',function(){
+    return view('utama.dilarang');
+})->name('dilarang');
 
 
 Route::post('/login', [LoginController::class, 'authenticate'])->name('auth');
@@ -86,6 +90,14 @@ Route::get('absen/{id}/edit', [AbsensController::class, 'edit'])->name('absen.ed
 Route::put('absen/{id}', [AbsensController::class, 'update'])->name('absen.update');
 Route::get('/absen/riwayat', [AbsensController::class, 'riwayat'])->name('absen.riwayat');
 Route::post('/absen/update-status', [AbsensController::class, 'updateStatus'])->name('absen.updateStatus');
+Route::get('/siswa/absen/riwayat', [AbsensController::class, 'riwayatSiswa'])->name('siswaa.absen.riwayat');
 
+
+Route::get('/pengajuan', [PengajuanController::class, 'index'])->name('pengajuan.index');
+Route::get('/pengajuan/create', [PengajuanController::class, 'create'])->name('pengajuan.create');
+Route::post('/pengajuan/store', [PengajuanController::class, 'store'])->name('pengajuan.store');
+Route::get('/walikelas/pengajuan', [PengajuanController::class, 'index3'])->name('pengajuan.walikelas.index');
+Route::post('/pengajuan/{id}/update-status', [PengajuanController::class, 'updateStatus'])->name('pengajuan.updateStatus');
+Route::get('/admin/pengajuan', [PengajuanController::class, 'indexAdmin'])->name('pengajuan.admin.index');
 
     

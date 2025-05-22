@@ -1,0 +1,264 @@
+/* --- Container dan Card --- */
+.container {
+    margin: 2rem auto 3rem auto;
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    border: none;
+    background-color: #fefce8;
+}
+.card-body {
+    padding: 1rem 1.25rem;
+}
+
+
+.card-header {
+    font-weight: 700;
+    font-size: 1.5rem;
+    background-color: #78350f; /* coklat tua */
+    color: #fef3c7;
+    padding: 1rem 1.5rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    letter-spacing: 0.05em;
+}
+
+/* --- Form Filter --- */
+.form-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: #3f3f46;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #3f3f46;
+    min-width: 60px;
+}
+
+.form-control {
+    min-width: 160px;
+    padding: 0.45rem 0.75rem;
+    border-radius: 8px;
+    border: 1.8px solid #d6d3d1;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #a16207;
+    box-shadow: 0 0 6px rgba(202, 138, 4, 0.5);
+}
+
+/* --- Tombol --- */
+.btn-primary {
+    background-color: #a16207;
+    border-color: #a16207;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    color: #fff7ed;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #713f12;
+    border-color: #713f12;
+}
+
+.btn-primary i {
+    margin-right: 0.5rem;
+}
+
+/* --- Export Buttons --- */
+#exportButtons {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 0.7rem;
+}
+
+#exportButtons .btn {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.btn-sm.btn-success {
+    background-color: #84cc16;
+    border-color: #84cc16;
+    color: #fefce8;
+}
+
+.btn-sm.btn-success:hover {
+    background-color: #65a30d;
+    border-color: #65a30d;
+}
+
+.btn-sm.btn-danger {
+    background-color: #dc2626;
+    border-color: #dc2626;
+    color: #fef2f2;
+}
+
+.btn-sm.btn-danger:hover {
+    background-color: #991b1b;
+    border-color: #991b1b;
+}
+
+.btn-sm.btn-info {
+    background-color: #d97706;
+    border-color: #d97706;
+    color: #fff7ed;
+}
+
+.btn-sm.btn-info:hover {
+    background-color: #b45309;
+    border-color: #b45309;
+}
+
+/* --- Tabel --- */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+    min-width: 700px;
+}
+
+thead tr {
+    background-color: #fafaf9;
+}
+
+thead th {
+    padding: 12px 10px;
+    border: 1px solid #e7e5e4;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    color: #292524;
+}
+
+tbody td {
+    padding: 10px 8px;
+    border: 1px solid #e7e5e4;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    color: #3f3f46;
+}
+
+tbody td:first-child,
+tbody td:nth-child(2),
+tbody td:nth-child(3) {
+    text-align: left;
+    white-space: normal;
+}
+
+/* --- Status Absensi --- */
+.bg-success {
+    background-color: #dcfce7 !important;
+    color: #166534 !important;
+    font-weight: 700;
+}
+
+.bg-warning {
+    background-color: #fef9c3 !important;
+    color: #92400e !important;
+    font-weight: 700;
+}
+
+.bg-info {
+    background-color: #fde68a !important;
+    color: #92400e !important;
+    font-weight: 700;
+}
+
+.bg-danger {
+    background-color: #fee2e2 !important;
+    color: #991b1b !important;
+    font-weight: 700;
+}
+
+/* --- Alert --- */
+.alert-info {
+    font-weight: 700;
+    font-size: 1.1rem;
+    background-color: #fef9c3;
+    color: #78350f;
+    border-radius: 10px;
+    padding: 1.25rem;
+    margin-top: 2rem;
+}
+
+.dt-button {
+    background-color: #0d6efd !important; /* Bootstrap Primary */
+    color: white !important;
+    border: none;
+    padding: 8px 16px;
+    margin-right: 8px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dt-button:hover {
+    background-color: #0b5ed7 !important;
+    color: #fff !important;
+}
+
+.dt-button.buttons-excel {
+    background-color: #198754 !important; /* Bootstrap Success */
+}
+
+.dt-button.buttons-excel:hover {
+    background-color: #157347 !important;
+}
+
+.dt-button.buttons-pdf {
+    background-color: #dc3545 !important; /* Bootstrap Danger */
+}
+
+.dt-button.buttons-pdf:hover {
+    background-color: #bb2d3b !important;
+}
+
+.dt-button.buttons-print {
+    background-color: #6c757d !important; /* Bootstrap Secondary */
+}
+
+.dt-button.buttons-print:hover {
+    background-color: #5c636a !important;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .form-control {
+        min-width: 100% !important;
+    }
+    table {
+        font-size: 0.8rem;
+    }
+    thead th, tbody td {
+        padding: 6px 4px;
+    }
+}
+

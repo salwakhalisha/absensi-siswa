@@ -7,6 +7,7 @@ use App\Models\Absen;
 use App\Models\Lokal;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class AbsensController extends Controller
@@ -66,32 +67,86 @@ class AbsensController extends Controller
         ]);
     }
 
-
-    public function riwayat(Request $request)
+public function riwayat(Request $request)
 {
-    // Ambil semua kelas/lokal untuk dropdown filter
+    $kelas = $request->input('kelas');
+    $bulan = $request->input('bulan', now()->month);
+    $tahun = $request->input('tahun', now()->year);
+
     $lokals = Lokal::all();
 
-    $query = Absen::with(['siswa.lokal.jurusan']);
+    // Ambil semua tanggal dalam bulan yang dipilih (untuk tabel pertama)
+    $tanggalDalamBulan = collect();
+    $daysInMonth = Carbon::create($tahun, $bulan)->daysInMonth;
 
-    // Jika ada filter kelas dari request
-    if ($request->has('kelas') && $request->kelas != '') {
-        $kelas = $request->kelas;
-
-        $query->whereHas('siswa', function($q) use ($kelas) {
-            $q->where('lokal_id', $kelas);
-        });
+    for ($i = 1; $i <= $daysInMonth; $i++) {
+        $tanggal = Carbon::createFromDate($tahun, $bulan, $i)->format('Y-m-d');
+        $tanggalDalamBulan->push($tanggal);
     }
 
-    // Bisa juga tambah filter tanggal jika perlu
-    if ($request->has('tanggal') && $request->tanggal != '') {
-        $query->whereDate('tanggal', $request->tanggal);
+    // Data untuk tabel absensi per siswa & tanggal (sudah benar di $data)
+
+    $siswaQuery = Siswa::with(['lokal']);
+    if ($kelas) {
+        $siswaQuery->where('lokal_id', $kelas);
+    }
+    $siswaList = $siswaQuery->get();
+
+    $data = [];
+    foreach ($siswaList as $siswa) {
+        $absensi = Absen::where('siswa_id', $siswa->id)
+            ->whereMonth('tanggal', $bulan)
+            ->whereYear('tanggal', $tahun)
+            ->get()
+            ->groupBy(function ($item) {
+                return Carbon::parse($item->tanggal)->format('Y-m-d');
+            });
+
+        $rekap = ['hadir' => 0, 'sakit' => 0, 'izin' => 0, 'alpa' => 0];
+        $absenPerTanggal = [];
+        foreach ($tanggalDalamBulan as $tanggal) {
+            $status = '-';
+            if (isset($absensi[$tanggal])) {
+                $status = strtolower($absensi[$tanggal]->first()->status);
+                $rekap[$status] = $rekap[$status] + 1;
+            }
+            $absenPerTanggal[$tanggal] = $status;
+        }
+
+        $data[] = [
+            'siswa' => $siswa,
+            'absen' => $absenPerTanggal,
+            'rekap' => $rekap
+        ];
     }
 
-    $riwayats = $query->paginate(10);
+    // Query absensi untuk tabel riwayat (per record), filter sesuai kelas, tanggal, bulan, tahun
+    $riwayats = Absen::with(['siswa.lokal'])
+        ->when($kelas, function ($query) use ($kelas) {
+            $query->whereHas('siswa', function ($q) use ($kelas) {
+                $q->where('lokal_id', $kelas);
+            });
+        })
+        ->when($request->tanggal, function ($query) use ($request) {
+            $query->whereDate('tanggal', $request->tanggal);
+        })
+        ->whereMonth('tanggal', $bulan)
+        ->whereYear('tanggal', $tahun)
+        ->orderBy('tanggal', 'desc')
+        ->paginate(10);
 
-    return view('gurumurid.absen.riwayat', compact('riwayats', 'lokals'));
+    return view('gurumurid.absen.riwayat', [
+        'data' => $data,
+        'lokals' => $lokals,
+        'tanggalDalamBulan' => $tanggalDalamBulan,
+        'kelas' => $kelas,
+        'bulan' => $bulan,
+        'tahun' => $tahun,
+        'riwayats' => $riwayats
+    ]);
 }
+
+
 
     
     public function updateStatus(Request $request)
@@ -283,5 +338,23 @@ class AbsensController extends Controller
             'datasiswa' => $datasiswa,
             'Lokals' => $Lokals
         ]);
+    }
+
+    public function riwayatSiswa(Request $request)
+    {
+        $user = Auth::user();
+        $siswa = \App\Models\Siswa::where('user_id', $user->id)->firstOrFail();
+
+        $riwayatsQuery = \App\Models\Absen::where('siswa_id', $siswa->id)
+            ->with('guru')
+            ->orderBy('tanggal', 'desc');
+
+        if ($request->filled('tanggal')) {
+            $riwayatsQuery->whereDate('tanggal', $request->tanggal);
+        }
+
+        $riwayats = $riwayatsQuery->get();
+
+        return view('siswaa.absen.riwayat', compact('riwayats'));
     }
 }

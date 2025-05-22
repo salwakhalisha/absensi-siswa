@@ -1,0 +1,86 @@
+/* Container khusus untuk form */
+.form-container {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fdfdfd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul form */
+.form-container h5 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* Label form */
+.form-label {
+    font-weight: 600;
+    color: #555;
+    color: black;
+}
+
+/* Kontrol input dan textarea */
+.form-control {
+    font-size: 1rem;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    color: black;
+}
+
+/* Area tombol */
+.btn-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* Tombol umum */
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: 0.2s ease-in-out;
+}
+
+/* Efek hover */
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Warna tombol */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: black;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+.mb-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* pastikan input meluas penuh */
+    gap: 5px; /* beri jarak antara label dan input */
+}
+
