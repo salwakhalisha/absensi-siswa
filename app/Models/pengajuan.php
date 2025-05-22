@@ -15,7 +15,7 @@ class pengajuan extends Model
         'status',
         'foto',
         'siswa_id',
-        'id_guru',
+        'guru_id',
     ];
 
     // Relasi ke tabel siswa
@@ -27,6 +27,6 @@ class pengajuan extends Model
     // Relasi ke tabel guru
     public function guru()
     {
-        return $this->belongsTo(Guru::class, 'id_guru');
+        return $this->belongsTo(Guru::class, 'guru_id');
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable; // Jika Guru bisa login
 use Illuminate\Database\Eloquent\Model;
 
 class Guru extends Model
@@ -27,9 +26,19 @@ class Guru extends Model
         'password',
     ];
 
-    // Relasi: Guru dimiliki oleh 1 User
+    /**
+     * Relasi: Guru dimiliki oleh 1 User
+     */
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    /**
+     * Relasi: Guru memiliki banyak notifikasi
+     */
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class, 'guru_id');
     }
 }
